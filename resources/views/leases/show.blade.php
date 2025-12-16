@@ -48,37 +48,37 @@
                     @endphp
 
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-2xl font-semibold">Lease Details - {{ $lease->tenant_name }}</h2>
+                        <h2 class="text-2xl font-semibold">Lease Details - {{ $lease->tenant_name }} (تفاصيل العقد)</h2>
                         <div class="flex gap-2">
                             <a href="{{ route('leases.edit', $lease) }}"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Edit
+                                Edit (تعديل)
                             </a>
                             <a href="{{ route('leases.index') }}"
                                 class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                                Back to List
+                                Back to List (العودة للقائمة)
                             </a>
                         </div>
                     </div>
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
-                            <h3 class="text-lg font-semibold mb-4">Lease Information</h3>
+                            <h3 class="text-lg font-semibold mb-4">Lease Information (بيانات العقد)</h3>
                             <dl class="space-y-2">
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Apartment:</dt>
+                                    <dt class="font-medium w-1/3">Apartment (الشقة):</dt>
                                     <dd>{{ $lease->apartment->display_name }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Start Date:</dt>
+                                    <dt class="font-medium w-1/3">Start Date (تاريخ البدء):</dt>
                                     <dd>{{ optional($lease->start_date)->format('Y-m-d') }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">End Date:</dt>
+                                    <dt class="font-medium w-1/3">End Date (تاريخ الانتهاء):</dt>
                                     <dd>{{ $lease->end_date ? $lease->end_date->format('Y-m-d') : '—' }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Deposit Amount:</dt>
+                                    <dt class="font-medium w-1/3">Deposit Amount (مبلغ التأمين):</dt>
                                     <dd class="text-green-600 dark:text-green-400 font-bold">
                                         {{ $lease->deposit_amount ? 'JOD ' . number_format($lease->deposit_amount, 2) : 'N/A' }}
                                     </dd>
@@ -87,33 +87,33 @@
                         </div>
 
                         <div>
-                            <h3 class="text-lg font-semibold mb-4">Tenant Information</h3>
+                            <h3 class="text-lg font-semibold mb-4">Tenant Information (بيانات المستأجر)</h3>
                             <dl class="space-y-2">
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Name:</dt>
+                                    <dt class="font-medium w-1/3">Name (الاسم):</dt>
                                     <dd>{{ $lease->tenant_name }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Email:</dt>
+                                    <dt class="font-medium w-1/3">Email (البريد):</dt>
                                     <dd>{{ $lease->tenant_email ?? 'N/A' }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">Phone:</dt>
+                                    <dt class="font-medium w-1/3">Phone (الهاتف):</dt>
                                     <dd>{{ $lease->tenant_phone }}</dd>
                                 </div>
                                 <div class="flex">
-                                    <dt class="font-medium w-1/3">National ID:</dt>
+                                    <dt class="font-medium w-1/3">National ID (الرقم الوطني):</dt>
                                     <dd>{{ $lease->tenant_national_id ?? 'N/A' }}</dd>
                                 </div>
                             </dl>
                         </div>
 
                         <div class="md:col-span-2">
-                            <h3 class="text-lg font-semibold mb-4">Documents</h3>
+                            <h3 class="text-lg font-semibold mb-4">Documents (المستندات)</h3>
                             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                                 @if ($lease->tenant_image)
                                     <div>
-                                        <p class="text-sm font-medium mb-2">Tenant Photo</p>
+                                        <p class="text-sm font-medium mb-2">Tenant Photo (صورة المستأجر)</p>
                                         <img src="{{ asset('storage/' . $lease->tenant_image) }}" alt="Tenant Photo"
                                             class="w-full h-48 object-cover rounded shadow">
                                     </div>
@@ -121,7 +121,7 @@
 
                                 @if ($lease->national_id_image)
                                     <div>
-                                        <p class="text-sm font-medium mb-2">National ID</p>
+                                        <p class="text-sm font-medium mb-2">National ID (الهوية)</p>
                                         <img src="{{ asset('storage/' . $lease->national_id_image) }}" alt="National ID"
                                             class="w-full h-48 object-cover rounded shadow">
                                     </div>
@@ -129,10 +129,10 @@
 
                                 @if ($lease->lease_document)
                                     <div>
-                                        <p class="text-sm font-medium mb-2">Lease Document</p>
+                                        <p class="text-sm font-medium mb-2">Lease Document (ملف العقد)</p>
                                         <a href="{{ asset('storage/' . $lease->lease_document) }}" target="_blank"
                                             class="text-blue-600 hover:text-blue-900 dark:text-blue-400">
-                                            View Document
+                                            View Document (عرض الملف)
                                         </a>
                                     </div>
                                 @endif
@@ -140,10 +140,10 @@
                         </div>
 
                         <div class="md:col-span-2">
-                            <h3 class="text-lg font-semibold mb-4">Utility Readings During Lease</h3>
+                            <h3 class="text-lg font-semibold mb-4">Utility Readings During Lease (قراءات المرافق خلال العقد)</h3>
                             <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
                                 <div>
-                                    <h4 class="text-md font-semibold mb-2">Water</h4>
+                                    <h4 class="text-md font-semibold mb-2">Water (مياه)</h4>
                                     @if ($waterUsage->isNotEmpty())
                                         <div class="overflow-x-auto">
                                             <table class="w-full text-sm divide-y divide-gray-200 dark:divide-gray-700">
@@ -151,19 +151,19 @@
                                                     <tr>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Date</th>
+                                                            Date (التاريخ)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Meter #</th>
+                                                            Meter # (رقم العداد)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Reading</th>
+                                                            Reading (القراءة)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Cost</th>
+                                                            Cost (التكلفة)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Paid</th>
+                                                            Paid (الدفع)</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -191,11 +191,11 @@
                                         </div>
                                     @else
                                         <p class="text-sm text-gray-500 dark:text-gray-400">No water readings recorded
-                                            during this lease.</p>
+                                            during this lease. (لا توجد قراءات مياه خلال العقد)</p>
                                     @endif
                                 </div>
                                 <div>
-                                    <h4 class="text-md font-semibold mb-2">Electric</h4>
+                                    <h4 class="text-md font-semibold mb-2">Electric (كهرباء)</h4>
                                     @if ($electricUsage->isNotEmpty())
                                         <div class="overflow-x-auto">
                                             <table class="w-full text-sm divide-y divide-gray-200 dark:divide-gray-700">
@@ -203,19 +203,19 @@
                                                     <tr>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Date</th>
+                                                            Date (التاريخ)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Meter #</th>
+                                                            Meter # (رقم العداد)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Reading</th>
+                                                            Reading (القراءة)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Cost</th>
+                                                            Cost (التكلفة)</th>
                                                         <th
                                                             class="px-4 py-2 text-left font-medium text-gray-500 dark:text-gray-400">
-                                                            Paid</th>
+                                                            Paid (الدفع)</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody class="divide-y divide-gray-200 dark:divide-gray-700">
@@ -243,7 +243,7 @@
                                         </div>
                                     @else
                                         <p class="text-sm text-gray-500 dark:text-gray-400">No electric readings recorded
-                                            during this lease.</p>
+                                            during this lease. (لا توجد قراءات كهرباء خلال العقد)</p>
                                     @endif
                                 </div>
                             </div>
@@ -251,7 +251,7 @@
 
                         @if ($lease->notes)
                             <div class="md:col-span-2">
-                                <h3 class="text-lg font-semibold mb-4">Notes</h3>
+                                <h3 class="text-lg font-semibold mb-4">Notes (ملاحظات)</h3>
                                 <p class="text-gray-600 dark:text-gray-400">{{ $lease->notes }}</p>
                             </div>
                         @endif

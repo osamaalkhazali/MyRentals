@@ -47,7 +47,7 @@
                 <div>
                     <p class="px-4 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">Operations</p>
                     <!-- Dashboard -->
-                <a href="{{ route('dashboard') }}"
+                <a href="{{ route('dashboard') }}" title="لوحة التحكم"
                     class="flex items-center px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('dashboard') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -58,7 +58,7 @@
                 </a>
 
                 <!-- Apartments -->
-                <a href="{{ route('apartments.index') }}"
+                <a href="{{ route('apartments.index') }}" title="الشقق"
                     class="flex items-center px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('apartments.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -74,7 +74,7 @@
 
                 <!-- Leases Dropdown -->
                 <div x-data="{ open: {{ request()->routeIs('leases.*') || request()->routeIs('lease-payments.*') ? 'true' : 'false' }} }">
-                    <button @click="open = !open"
+                    <button @click="open = !open" title="العقود والمستأجرون"
                         class="w-full flex items-center justify-between px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('leases.*') || request()->routeIs('lease-payments.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,11 +91,11 @@
                         </svg>
                     </button>
                     <div x-show="open" x-collapse class="ml-4 space-y-1">
-                        <a href="{{ route('leases.index') }}"
+                        <a href="{{ route('leases.index') }}" title="جميع العقود"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('leases.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">All Leases</span>
                         </a>
-                        <a href="{{ route('lease-payments.index') }}"
+                        <a href="{{ route('lease-payments.index') }}" title="المدفوعات الشهرية"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('lease-payments.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">Monthly Payments</span>
                         </a>
@@ -103,7 +103,7 @@
                 </div>
 
                 <!-- Expenses -->
-                <a href="{{ route('expenses.index') }}"
+                <a href="{{ route('expenses.index') }}" title="المصاريف"
                     class="flex items-center px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('expenses.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -118,7 +118,7 @@
 
                 <!-- Water Management Dropdown -->
                 <div x-data="{ open: {{ request()->routeIs('water-services.*') || request()->routeIs('water-readings.*') ? 'true' : 'false' }} }">
-                    <button @click="open = !open"
+                    <button @click="open = !open" title="إدارة المياه"
                         class="w-full flex items-center justify-between px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('water-services.*') || request()->routeIs('water-readings.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -135,11 +135,11 @@
                         </svg>
                     </button>
                     <div x-show="open" x-collapse class="ml-4 space-y-1">
-                        <a href="{{ route('water-services.index') }}"
+                        <a href="{{ route('water-services.index') }}" title="خدمات المياه"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('water-services.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">Services</span>
                         </a>
-                        <a href="{{ route('water-readings.index') }}"
+                        <a href="{{ route('water-readings.index') }}" title="قراءات عدادات المياه"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('water-readings.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">Meter Readings</span>
                         </a>
@@ -148,7 +148,7 @@
 
                 <!-- Electric Management Dropdown -->
                 <div x-data="{ open: {{ request()->routeIs('electric-services.*') || request()->routeIs('electric-readings.*') ? 'true' : 'false' }} }">
-                    <button @click="open = !open"
+                    <button @click="open = !open" title="إدارة الكهرباء"
                         class="w-full flex items-center justify-between px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('electric-services.*') || request()->routeIs('electric-readings.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                         <div class="flex items-center">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,11 +164,11 @@
                         </svg>
                     </button>
                     <div x-show="open" x-collapse class="ml-4 space-y-1">
-                        <a href="{{ route('electric-services.index') }}"
+                        <a href="{{ route('electric-services.index') }}" title="خدمات الكهرباء"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('electric-services.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">Services</span>
                         </a>
-                        <a href="{{ route('electric-readings.index') }}"
+                        <a href="{{ route('electric-readings.index') }}" title="قراءات عدادات الكهرباء"
                             class="flex items-center px-4 py-2 text-sm text-gray-600 dark:text-gray-300 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('electric-readings.*') ? 'bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400' : '' }}">
                             <span class="ml-3">Meter Readings</span>
                         </a>
@@ -180,7 +180,7 @@
                     <p class="px-4 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">Analytics</p>
 
                 <!-- Reports -->
-                <a href="{{ route('reports.apartments.roi') }}"
+                <a href="{{ route('reports.apartments.roi') }}" title="الأداء الاستثماري"
                     class="flex items-center px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700 {{ request()->routeIs('reports.*') ? 'bg-blue-100 dark:bg-gray-700 text-blue-700 dark:text-blue-400' : '' }}">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -195,7 +195,7 @@
                     <p class="px-4 text-xs font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wide mb-2">Administration</p>
 
                 <!-- Settings -->
-                <a href="#"
+                <a href="#" title="الإعدادات"
                     class="flex items-center px-4 py-3 mb-2 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-blue-50 dark:hover:bg-gray-700">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"

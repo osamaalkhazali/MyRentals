@@ -6,10 +6,10 @@
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex justify-between items-center mb-6">
-                        <h2 class="text-2xl font-semibold">Edit Water Service</h2>
+                        <h2 class="text-2xl font-semibold">Edit Water Service (تعديل خدمة المياه)</h2>
                         <a href="{{ route('water-services.index') }}"
                             class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                            Back to List
+                            Back to List (العودة للقائمة)
                         </a>
                     </div>
 
@@ -30,7 +30,7 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="apartment_id" class="block text-sm font-medium mb-2">Apartment *</label>
+                                <label for="apartment_id" class="block text-sm font-medium mb-2">Apartment (الشقة) *</label>
                                 <select name="apartment_id" id="apartment_id" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                     <option value="">Select Apartment</option>
@@ -45,14 +45,14 @@
 
                             <div>
                                 <label for="registration_number" class="block text-sm font-medium mb-2">Registration
-                                    Number *</label>
+                                    Number (رقم التسجيل) *</label>
                                 <input type="text" name="registration_number" id="registration_number" required
                                     value="{{ old('registration_number', $waterService->registration_number) }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="meter_number" class="block text-sm font-medium mb-2">Meter Number *</label>
+                                <label for="meter_number" class="block text-sm font-medium mb-2">Meter Number (رقم العداد) *</label>
                                 <input type="text" name="meter_number" id="meter_number" required
                                     value="{{ old('meter_number', $waterService->meter_number) }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
@@ -62,18 +62,18 @@
                                 <input type="checkbox" name="is_active" id="is_active" value="1"
                                     {{ old('is_active', $waterService->is_active) ? 'checked' : '' }}
                                     class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500">
-                                <label for="is_active" class="text-sm font-medium">Service is active</label>
+                                <label for="is_active" class="text-sm font-medium">Service is active (الخدمة مفعلة)</label>
                             </div>
                         </div>
 
                         <div class="mt-6 flex justify-end gap-4">
                             <a href="{{ route('water-services.index') }}"
                                 class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded">
-                                Cancel
+                                Cancel (إلغاء)
                             </a>
                             <button type="submit"
                                 class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-                                Update Water Service
+                                Update Water Service (تحديث خدمة المياه)
                             </button>
                         </div>
                     </form>

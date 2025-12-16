@@ -9,9 +9,9 @@
                 <div class="p-6 text-gray-900 dark:text-gray-100">
                     <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
                         <div>
-                            <h2 class="text-2xl font-semibold">Portfolio Investment Performance</h2>
+                            <h2 class="text-2xl font-semibold">Portfolio Investment Performance (أداء الاستثمار للمحفظة)</h2>
                             <p class="text-sm text-gray-500 dark:text-gray-400 mt-1">Monitor acquisition spend, rental
-                                returns, and owner-funded costs across every apartment.</p>
+                                returns, and owner-funded costs across every apartment. (راقب تكاليف الشراء، عوائد الإيجار، ومصاريف المالك لكل شقة)</p>
                         </div>
                         <div class="flex flex-wrap gap-3">
                             <span
@@ -34,22 +34,22 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4 mb-6">
                         <div
                             class="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Investment</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Investment (إجمالي الاستثمار)</p>
                             <p class="mt-2 text-2xl font-semibold">{{ $currency($totals['purchase_price']) }}</p>
                         </div>
                         <div
                             class="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Rental Income</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Rental Income (إجمالي دخل الإيجار)</p>
                             <p class="mt-2 text-2xl font-semibold">{{ $currency($totals['income']) }}</p>
                         </div>
                         <div
                             class="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Owner Expenses</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Total Owner Expenses (إجمالي مصروفات المالك)</p>
                             <p class="mt-2 text-2xl font-semibold">{{ $currency($totals['expenses']) }}</p>
                         </div>
                         <div
                             class="rounded-lg border border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900/40 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Net Profit</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Net Profit (صافي الربح)</p>
                             <p class="mt-2 text-2xl font-semibold {{ $netProfitClass }}">
                                 {{ $currency($totals['net_profit']) }}</p>
                         </div>
@@ -57,18 +57,18 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                         <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">General Expenses</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">General Expenses (المصروفات العامة)</p>
                             <p class="mt-2 text-xl font-semibold">{{ $currency($totals['general_expenses']) }}</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Maintenance, fees, and other owner
                                 charges.</p>
                         </div>
                         <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Owner Utility Expenses</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Owner Utility Expenses (مصاريف خدمات المالك)</p>
                             <p class="mt-2 text-xl font-semibold">{{ $currency($totals['owner_utility_expenses']) }}</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Utilities not billed to tenants.</p>
                         </div>
                         <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
-                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Portfolio Average ROI</p>
+                            <p class="text-xs uppercase text-gray-500 dark:text-gray-400">Portfolio Average ROI (متوسط العائد على الاستثمار للمحفظة)</p>
                             <p class="mt-2 text-xl font-semibold">
                                 {{ $averageRoi !== null ? number_format($averageRoi, 2) . '%' : 'N/A' }}</p>
                             <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Across apartments with purchase price
@@ -81,33 +81,33 @@
                             class="mb-8 rounded-lg bg-blue-50 dark:bg-blue-900/40 border border-blue-200 dark:border-blue-700 p-5">
                             <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
                                 <div>
-                                    <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Top Performing Apartment
+                                    <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Top Performing Apartment (أعلى شقة أداءً)
                                     </p>
                                     <h3 class="mt-1 text-xl font-semibold text-blue-900 dark:text-blue-100">
                                         {{ $topApartment->display_name }}</h3>
-                                    <p class="text-sm text-blue-700 dark:text-blue-300">ROI:
+                                    <p class="text-sm text-blue-700 dark:text-blue-300">ROI (العائد):
                                         {{ number_format($topApartment->roi, 2) }}% &middot; Net Profit:
                                         {{ $currency($topApartment->total_income - $topApartment->total_expenses) }}</p>
                                 </div>
                                 <div class="grid grid-cols-2 gap-4">
                                     <div>
-                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Purchase Price</p>
+                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Purchase Price (سعر الشراء)</p>
                                         <p class="mt-1 text-lg font-semibold text-blue-900 dark:text-blue-100">
                                             {{ $topApartment->purchase_price ? $currency((float) $topApartment->purchase_price) : 'N/A' }}
                                         </p>
                                     </div>
                                     <div>
-                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Rental Income</p>
+                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Rental Income (دخل الإيجار)</p>
                                         <p class="mt-1 text-lg font-semibold text-blue-900 dark:text-blue-100">
                                             {{ $currency($topApartment->total_income) }}</p>
                                     </div>
                                     <div>
-                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Owner Expenses</p>
+                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Owner Expenses (مصاريف المالك)</p>
                                         <p class="mt-1 text-lg font-semibold text-blue-900 dark:text-blue-100">
                                             {{ $currency($topApartment->total_expenses) }}</p>
                                     </div>
                                     <div>
-                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Leases</p>
+                                        <p class="text-xs uppercase text-blue-700 dark:text-blue-300">Leases (العقود)</p>
                                         <p class="mt-1 text-lg font-semibold text-blue-900 dark:text-blue-100">
                                             {{ $topApartment->leases->count() }}</p>
                                     </div>
@@ -119,8 +119,8 @@
                     <div class="grid grid-cols-1 xl:grid-cols-2 gap-6 mb-10">
                         <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold">ROI by Apartment</h3>
-                                <span class="text-xs text-gray-500 dark:text-gray-400">Percentage</span>
+                                <h3 class="text-lg font-semibold">ROI by Apartment (العائد لكل شقة)</h3>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">Percentage (النسبة المئوية)</span>
                             </div>
                             <div class="relative h-72">
                                 <canvas id="roiChart" class="absolute inset-0 w-full h-full"></canvas>
@@ -128,8 +128,8 @@
                         </div>
                         <div class="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-4">
                             <div class="flex items-center justify-between mb-4">
-                                <h3 class="text-lg font-semibold">Income vs Expenses</h3>
-                                <span class="text-xs text-gray-500 dark:text-gray-400">JOD</span>
+                                <h3 class="text-lg font-semibold">Income vs Expenses (الإيرادات مقابل المصروفات)</h3>
+                                <span class="text-xs text-gray-500 dark:text-gray-400">JOD (دينار أردني)</span>
                             </div>
                             <div class="relative h-72">
                                 <canvas id="financialChart" class="absolute inset-0 w-full h-full"></canvas>
@@ -143,31 +143,31 @@
                                 <tr>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        ID</th>
+                                        ID (المعرف)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Apartment</th>
+                                        Apartment (الشقة)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Purchase Price</th>
+                                        Purchase Price (سعر الشراء)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Rent Income</th>
+                                        Rent Income (دخل الإيجار)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        General Expenses</th>
+                                        General Expenses (المصروفات العامة)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Owner Utility Expenses</th>
+                                        Owner Utility Expenses (مصاريف خدمات المالك)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Total Expenses</th>
+                                        Total Expenses (إجمالي المصروفات)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        Net Profit</th>
+                                        Net Profit (صافي الربح)</th>
                                     <th
                                         class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider">
-                                        ROI</th>
+                                        ROI (العائد على الاستثمار)</th>
                                 </tr>
                             </thead>
                             <tbody class="bg-white dark:bg-gray-800 divide-y divide-gray-200 dark:divide-gray-700 text-sm">
@@ -202,7 +202,7 @@
                                 @empty
                                     <tr>
                                         <td colspan="9" class="px-6 py-6 text-center text-gray-500 dark:text-gray-400">
-                                            No apartments available for ROI reporting.
+                                            No apartments available for ROI reporting. (لا توجد شقق متاحة لتقرير العائد)
                                         </td>
                                     </tr>
                                 @endforelse
@@ -233,7 +233,7 @@
                     data: {
                         labels: chartData.labels,
                         datasets: [{
-                            label: 'ROI (%)',
+                            label: 'ROI (%) / العائد على الاستثمار',
                             data: chartData.roi,
                             backgroundColor: 'rgba(59, 130, 246, 0.7)',
                             borderColor: 'rgba(59, 130, 246, 1)',
@@ -257,7 +257,7 @@
                             },
                             tooltip: {
                                 callbacks: {
-                                    label: (context) => `${context.parsed.y.toFixed(2)}%`,
+                                    label: (context) => `${context.parsed.y.toFixed(2)}% / العائد`,
                                 },
                             },
                         },
@@ -274,7 +274,7 @@
                         labels: chartData.labels,
                         datasets: [{
                                 type: 'bar',
-                                label: 'Income',
+                                label: 'Income (الإيرادات)',
                                 data: chartData.income,
                                 backgroundColor: 'rgba(34, 197, 94, 0.7)',
                                 borderColor: 'rgba(34, 197, 94, 1)',
@@ -282,7 +282,7 @@
                             },
                             {
                                 type: 'bar',
-                                label: 'Expenses',
+                                label: 'Expenses (المصروفات)',
                                 data: chartData.expenses,
                                 backgroundColor: 'rgba(239, 68, 68, 0.7)',
                                 borderColor: 'rgba(239, 68, 68, 1)',
@@ -290,7 +290,7 @@
                             },
                             {
                                 type: 'line',
-                                label: 'Net Profit',
+                                label: 'Net Profit (صافي الربح)',
                                 data: chartData.net_profit,
                                 borderColor: 'rgba(99, 102, 241, 1)',
                                 backgroundColor: 'rgba(99, 102, 241, 0.25)',

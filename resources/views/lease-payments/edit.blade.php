@@ -45,14 +45,14 @@
                             </div>
 
                             <div>
-                                <label for="month" class="block text-sm font-medium mb-2">Month *</label>
+                                <label for="month" class="block text-sm font-medium mb-2">Month (الشهر) *</label>
                                 <input type="text" name="month" id="month"
                                     value="{{ old('month', $leasePayment->month) }}" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="due_date" class="block text-sm font-medium mb-2">Due Date *</label>
+                                <label for="due_date" class="block text-sm font-medium mb-2">Due Date (تاريخ الاستحقاق) *</label>
                                 <input type="date" name="due_date" id="due_date"
                                     value="{{ old('due_date', $leasePayment->due_date->format('Y-m-d')) }}" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
@@ -73,14 +73,14 @@
                             </div>
 
                             <div>
-                                <label for="payment_date" class="block text-sm font-medium mb-2">Payment Date</label>
+                                <label for="payment_date" class="block text-sm font-medium mb-2">Payment Date (تاريخ الدفع)</label>
                                 <input type="date" name="payment_date" id="payment_date"
                                     value="{{ old('payment_date', $leasePayment->payment_date?->format('Y-m-d')) }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="status" class="block text-sm font-medium mb-2">Status *</label>
+                                <label for="status" class="block text-sm font-medium mb-2">Status (الحالة) *</label>
                                 <select name="status" id="status" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                     <option value="unpaid"
@@ -100,7 +100,7 @@
 
                             @if ($leasePayment->receipt_file)
                                 <div class="md:col-span-2">
-                                    <label class="block text-sm font-medium mb-2">Current Receipt File</label>
+                                    <label class="block text-sm font-medium mb-2">Current Receipt File (الإيصال الحالي)</label>
                                     <a href="{{ asset('storage/' . $leasePayment->receipt_file) }}" target="_blank"
                                         class="text-blue-600 hover:text-blue-900 dark:text-blue-400">
                                         View Current Receipt
@@ -109,14 +109,14 @@
                             @endif
 
                             <div class="md:col-span-2">
-                                <label for="receipt_file" class="block text-sm font-medium mb-2">Receipt File
+                                <label for="receipt_file" class="block text-sm font-medium mb-2">Receipt File (ملف الإيصال)
                                     {{ $leasePayment->receipt_file ? '(Replace)' : '' }}</label>
                                 <input type="file" name="receipt_file" id="receipt_file" accept="image/*,.pdf"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div class="md:col-span-2">
-                                <label for="notes" class="block text-sm font-medium mb-2">Notes</label>
+                                <label for="notes" class="block text-sm font-medium mb-2">Notes (ملاحظات)</label>
                                 <textarea name="notes" id="notes" rows="3"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('notes', $leasePayment->notes) }}</textarea>
                             </div>

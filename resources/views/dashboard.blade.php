@@ -15,7 +15,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Total Apartments</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Total Apartments (إجمالي الشقق)</p>
                     <p class="text-2xl font-semibold text-gray-700 dark:text-gray-200">{{ $totalApartments }}</p>
                     <p class="text-xs text-green-600 dark:text-green-400 mt-1">{{ $availableApartments }} available</p>
                 </div>
@@ -32,7 +32,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Active Leases</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Active Leases (العقود النشطة)</p>
                     <p class="text-2xl font-semibold text-gray-700 dark:text-gray-200">{{ $activeLeases }}</p>
                     <p class="text-xs text-blue-600 dark:text-blue-400 mt-1">{{ $occupancyRate }}% occupancy</p>
                 </div>
@@ -49,7 +49,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Monthly Revenue</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Monthly Revenue (الإيراد الشهري)</p>
                     <p class="text-2xl font-semibold text-gray-700 dark:text-gray-200">
                         JOD {{ number_format($monthlyRevenue, 2) }}</p>
                     <p class="text-xs text-green-600 dark:text-green-400 mt-1">JOD {{ number_format($paidPayments, 2) }}
@@ -67,7 +67,7 @@
                     </svg>
                 </div>
                 <div class="ml-4">
-                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pending Payments</p>
+                    <p class="text-sm font-medium text-gray-600 dark:text-gray-400">Pending Payments (المدفوعات المعلقة)</p>
                     <p class="text-2xl font-semibold text-gray-700 dark:text-gray-200">{{ $pendingPayments }}</p>
                     <p class="text-xs text-red-600 dark:text-red-400 mt-1">JOD {{ number_format($totalPendingAmount, 2) }} due
                     </p>
@@ -77,20 +77,20 @@
     </div>
     <div class="grid grid-cols-1 gap-6 mb-8 lg:grid-cols-2">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Revenue Trend (Last 6 Months)</h3>
+            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Revenue Trend (Last 6 Months) (اتجاه الإيرادات لآخر 6 أشهر)</h3>
             <div style="height: 250px;">
                 <canvas id="revenueChart"></canvas>
             </div>
         </div>
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6">
-            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Payment Status Distribution</h3>
+            <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Payment Status Distribution (توزيع حالات الدفع)</h3>
             <div style="height: 250px;">
                 <canvas id="paymentStatusChart"></canvas>
             </div>
         </div>
     </div>
     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 mb-8">
-        <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Utility Costs (Last 6 Months)</h3>
+        <h3 class="text-lg font-semibold text-gray-700 dark:text-gray-200 mb-4">Utility Costs (Last 6 Months) (تكاليف الخدمات لآخر 6 أشهر)</h3>
         <div style="height: 300px;">
             <canvas id="utilityCostsChart"></canvas>
         </div>
@@ -255,7 +255,7 @@
             data: {
                 labels: {!! json_encode(array_column($monthlyRevenueData, 'month')) !!},
                 datasets: [{
-                    label: 'Revenue (JOD)',
+                    label: 'Revenue (JOD) (الإيراد)',
                     data: {!! json_encode(array_column($monthlyRevenueData, 'revenue')) !!},
                     borderColor: 'rgb(59, 130, 246)',
                     backgroundColor: 'rgba(59, 130, 246, 0.1)',
@@ -313,14 +313,14 @@
             data: {
                 labels: {!! json_encode(array_column($utilityCostsData, 'month')) !!},
                 datasets: [{
-                    label: 'Water (JOD)',
+                        label: 'Water (JOD) (المياه)',
                         data: {!! json_encode(array_column($utilityCostsData, 'water')) !!},
                         backgroundColor: 'rgba(59, 130, 246, 0.7)',
                         borderColor: 'rgb(59, 130, 246)',
                         borderWidth: 1
                     },
                     {
-                        label: 'Electric (JOD)',
+                        label: 'Electric (JOD) (الكهرباء)',
                         data: {!! json_encode(array_column($utilityCostsData, 'electric')) !!},
                         backgroundColor: 'rgba(250, 204, 21, 0.7)',
                         borderColor: 'rgb(250, 204, 21)',

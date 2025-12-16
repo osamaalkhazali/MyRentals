@@ -43,41 +43,41 @@
                             </div>
 
                             <div>
-                                <label for="month" class="block text-sm font-medium mb-2">Month *</label>
+                                <label for="month" class="block text-sm font-medium mb-2">Month (الشهر) *</label>
                                 <input type="text" name="month" id="month" value="{{ old('month') }}"
                                     placeholder="e.g., November 2025" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="due_date" class="block text-sm font-medium mb-2">Due Date *</label>
+                                <label for="due_date" class="block text-sm font-medium mb-2">Due Date (تاريخ الاستحقاق) *</label>
                                 <input type="date" name="due_date" id="due_date" value="{{ old('due_date') }}" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="amount_due" class="block text-sm font-medium mb-2">Amount Due (JOD) *</label>
+                                <label for="amount_due" class="block text-sm font-medium mb-2">Amount Due (JOD) (المبلغ المستحق) *</label>
                                 <input type="number" step="0.01" name="amount_due" id="amount_due"
                                     value="{{ old('amount_due') }}" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="amount_paid" class="block text-sm font-medium mb-2">Amount Paid (JOD)</label>
+                                <label for="amount_paid" class="block text-sm font-medium mb-2">Amount Paid (JOD) (المبلغ المدفوع)</label>
                                 <input type="number" step="0.01" name="amount_paid" id="amount_paid"
                                     value="{{ old('amount_paid') }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="payment_date" class="block text-sm font-medium mb-2">Payment Date</label>
+                                <label for="payment_date" class="block text-sm font-medium mb-2">Payment Date (تاريخ الدفع)</label>
                                 <input type="date" name="payment_date" id="payment_date"
                                     value="{{ old('payment_date') }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="status" class="block text-sm font-medium mb-2">Status *</label>
+                                <label for="status" class="block text-sm font-medium mb-2">Status (الحالة) *</label>
                                 <select name="status" id="status" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                                     <option value="unpaid" {{ old('status', 'unpaid') == 'unpaid' ? 'selected' : '' }}>
@@ -90,13 +90,13 @@
                             </div>
 
                             <div>
-                                <label for="receipt_file" class="block text-sm font-medium mb-2">Receipt File</label>
+                                <label for="receipt_file" class="block text-sm font-medium mb-2">Receipt File (ملف الإيصال)</label>
                                 <input type="file" name="receipt_file" id="receipt_file" accept="image/*,.pdf"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div class="md:col-span-2">
-                                <label for="notes" class="block text-sm font-medium mb-2">Notes</label>
+                                <label for="notes" class="block text-sm font-medium mb-2">Notes (ملاحظات)</label>
                                 <textarea name="notes" id="notes" rows="3"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">{{ old('notes') }}</textarea>
                             </div>

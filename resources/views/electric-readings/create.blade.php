@@ -32,7 +32,7 @@
 
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="electric_service_id" class="block text-sm font-medium mb-2">Electric Service
+                                <label for="electric_service_id" class="block text-sm font-medium mb-2">Electric Service (خدمة الكهرباء)
                                     *</label>
                                 <select name="electric_service_id" id="electric_service_id" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
@@ -48,14 +48,14 @@
                             </div>
 
                             <div>
-                                <label for="reading_date" class="block text-sm font-medium mb-2">Reading Date *</label>
+                                <label for="reading_date" class="block text-sm font-medium mb-2">Reading Date (تاريخ القراءة) *</label>
                                 <input type="date" name="reading_date" id="reading_date"
                                     value="{{ old('reading_date') }}" required
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>
 
                             <div>
-                                <label for="reading_value" class="block text-sm font-medium mb-2">Reading Value (kWh)
+                                <label for="reading_value" class="block text-sm font-medium mb-2">Reading Value (kWh) (قيمة القراءة)
                                     *</label>
                                 <input type="number" step="0.01" name="reading_value" id="reading_value" required
                                     value="{{ old('reading_value') }}"
@@ -63,7 +63,7 @@
                             </div>
 
                             <div>
-                                <label for="cost" class="block text-sm font-medium mb-2">Cost (JOD) *</label>
+                                <label for="cost" class="block text-sm font-medium mb-2">Cost (JOD) (التكلفة) *</label>
                                 <input type="number" step="0.01" name="cost" id="cost" required
                                     value="{{ old('cost') }}"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="md:col-span-2">
-                                <label for="image_path" class="block text-sm font-medium mb-2">Meter Reading Photo</label>
+                                <label for="image_path" class="block text-sm font-medium mb-2">Meter Reading Photo (صورة قراءة العداد)</label>
                                 <input type="file" name="image_path" id="image_path" accept="image/*"
                                     class="w-full rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500">
                             </div>

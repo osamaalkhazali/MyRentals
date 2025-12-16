@@ -60,7 +60,7 @@
             </select>
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Title<span
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Title (العنوان)<span
                     class="text-red-500">*</span></label>
             <input type="text" name="title" value="{{ old('title', $expense->title ?? '') }}" required
                 class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100" />
@@ -69,14 +69,14 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Expense Date<span
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Expense Date (تاريخ المصروف)<span
                     class="text-red-500">*</span></label>
             <input type="date" name="expense_date"
                 value="{{ old('expense_date', optional($expense->expense_date ?? null)->format('Y-m-d')) }}" required
                 class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100" />
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Amount (JOD)<span
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Amount (JOD) (المبلغ)<span
                     class="text-red-500">*</span></label>
             <input type="number" step="0.01" min="0" name="amount"
                 value="{{ old('amount', $expense->amount ?? '') }}" required
@@ -86,12 +86,12 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Vendor Name</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Vendor Name (اسم المورد)</label>
             <input type="text" name="vendor_name" value="{{ old('vendor_name', $expense->vendor_name ?? '') }}"
                 class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100" />
         </div>
         <div>
-            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Receipt File</label>
+            <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Receipt File (ملف الإيصال)</label>
             <input type="file" name="receipt_file"
                 class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100" />
             @if (!empty($expense?->receipt_file))
@@ -103,13 +103,13 @@
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Description (الوصف)</label>
         <textarea name="description" rows="3"
             class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100">{{ old('description', $expense->description ?? '') }}</textarea>
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Attachments (comma or newline
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Attachments (المرفقات) (comma or newline
             separated URLs)</label>
         @php
             $attachmentText = old('attachments');
@@ -123,7 +123,7 @@
     </div>
 
     <div>
-        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes</label>
+        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">Notes (ملاحظات)</label>
         <textarea name="notes" rows="3"
             class="w-full rounded-md border-gray-300 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-100">{{ old('notes', $expense->notes ?? '') }}</textarea>
     </div>

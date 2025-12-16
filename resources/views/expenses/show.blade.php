@@ -32,30 +32,30 @@
 
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
                         <div>
-                            <p class="text-gray-500">Apartment</p>
+                            <p class="text-gray-500">Apartment (الشقة)</p>
                             <p class="font-semibold text-gray-900 dark:text-gray-100">
                                 {{ $expense->apartment->display_name }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Lease</p>
+                            <p class="text-gray-500">Lease (العقد)</p>
                             <p class="font-semibold text-gray-900 dark:text-gray-100">
                                 {{ $expense->lease?->tenant_name ?? 'Not tied to a lease' }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Type</p>
+                            <p class="text-gray-500">Type (النوع)</p>
                             <p class="font-semibold text-gray-900 dark:text-gray-100">{{ ucfirst($expense->type) }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Amount</p>
+                            <p class="text-gray-500">Amount (المبلغ)</p>
                             <p class="font-semibold text-gray-900 dark:text-gray-100">
                                 JOD {{ number_format($expense->amount, 2) }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Vendor</p>
+                            <p class="text-gray-500">Vendor (المورد)</p>
                             <p class="font-semibold text-gray-900 dark:text-gray-100">{{ $expense->vendor_name ?? '—' }}</p>
                         </div>
                         <div>
-                            <p class="text-gray-500">Receipt</p>
+                            <p class="text-gray-500">Receipt (الإيصال)</p>
                             @if ($expense->receipt_file)
                                 <a href="{{ asset('storage/' . $expense->receipt_file) }}" target="_blank"
                                     class="text-blue-600 dark:text-blue-400 underline">View Receipt</a>
@@ -66,13 +66,13 @@
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Description</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Description (الوصف)</h3>
                         <p class="text-gray-700 dark:text-gray-300">
                             {{ $expense->description ?? 'No description provided.' }}</p>
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Attachments</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Attachments (المرفقات)</h3>
                         @if (!empty($expense->attachments))
                             <ul class="list-disc list-inside text-blue-600 dark:text-blue-400">
                                 @foreach ($expense->attachments as $attachment)
@@ -86,7 +86,7 @@
                     </div>
 
                     <div>
-                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Notes</h3>
+                        <h3 class="text-lg font-semibold text-gray-800 dark:text-gray-100 mb-2">Notes (ملاحظات)</h3>
                         <p class="text-gray-700 dark:text-gray-300">{{ $expense->notes ?? 'No notes recorded.' }}</p>
                     </div>
 
